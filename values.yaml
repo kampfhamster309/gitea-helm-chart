@@ -88,16 +88,16 @@ resources:
 ## ref:
 ##
 persistence:
-  enabled: false
-  # existingGiteaClaim: gitea-gitea
-  # existingPostgresClaim: gitea-postgres
+  enabled: enabled
+  existingGiteaClaim: gitea-gitea
+  existingPostgresClaim: gitea-postgres
   giteaSize: 10Gi
   postgresSize: 5Gi
   # storageClass: glusterfs
-  accessMode: ReadWriteMany
+  accessMode: ReadWriteOnce
 ## addtional annotations for hte pvcs  uncommenting below will prevent helm from deleting the pvc when hte chart is deleted
 #  annotations:
-#    "helm.sh/resource-policy": keep
+    "helm.sh/resource-policy": keep
 
 ## if you want to mount a volume directly without using a storageClass or pvcs
 #  directGiteaVolumeMount:
@@ -123,7 +123,7 @@ useInPodPostgres: true
 inPodPostgres:
   secret: postgresecrets
   subPath: "postgresql-db"
-  dataMountPath: /var/lib/postgresql/data/pgdata
+  dataMountPath: /var/lib/postgresql/pgdata
   # Create a database user
   # Default: postgres
   # postgresUser:
