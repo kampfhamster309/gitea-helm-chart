@@ -14,7 +14,7 @@ keywords:
 - gogs
 sources:
 - https://github.com/go-gitea/gitea
-- https://hub.docker.com/r/kunde21/gitea-arm/
+- https://hub.docker.com/r/kampfhamster309/gitea-arm/
 maintainers:
 - name: John Felten
   email: john.felten@gmail.com
