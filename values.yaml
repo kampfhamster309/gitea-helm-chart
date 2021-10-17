@@ -96,7 +96,7 @@ persistence:
   # storageClass: glusterfs
   accessMode: ReadWriteOnce
 ## addtional annotations for hte pvcs  uncommenting below will prevent helm from deleting the pvc when hte chart is deleted
-#  annotations:
+  annotations:
     "helm.sh/resource-policy": keep
 
 ## if you want to mount a volume directly without using a storageClass or pvcs
